@@ -1,0 +1,4 @@
+#En este archivo se pondran los archivos que no seran subidos aca mismo le hace la execcion
+.env
+node_modules
+dist

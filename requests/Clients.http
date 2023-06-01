@@ -1,0 +1,38 @@
+// declaramos una variable para llmarla con doble corchete
+@api = http://localhost:4000/Cliente
+
+//Con Get hacemos nuestras consultas de DB
+GET {{api}}
+###
+//aca el post hacemos el insert en nuestra BD 
+// debemos respetar lo mas posible el espacio y la sintaxis del codigo ya que si hacemos un salto de linea inapropiado dara un resultado indeseado
+POST {{api}}
+Content-Type: application/json
+
+{
+"Cedula":"444",
+"Nombre":"Felipe",
+"Apellido":"Luan",
+"Telefono":"84588025"
+}
+###
+//Buscar cliente por cedula
+GET {{api}}/444
+
+###
+
+//Vamos a realizar el delete de alguno de nuestros clientes por su identificacion
+DELETE {{api}}/4869444
+
+###
+GET {{api}}/count
+
+### Modifica los datos de la tabla
+PUT {{api}}/444
+Content-Type: application/json
+
+{
+    "Nombre":"Pedro",
+    "Apellido":"Sanchez",
+    "Telefono":"88025"
+}
